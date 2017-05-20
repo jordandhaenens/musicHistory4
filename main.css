@@ -1,0 +1,123 @@
+html body {
+	margin: 0
+	padding: 0;
+}
+
+
+#flex-container {
+	display: flex;
+	flex-direction: row;
+	padding: 0;
+	margin: 0 1rem;
+	height: 50%;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	/*flex-flow: row wrap;*/
+}
+
+
+/********************
+Nav Style
+********************/
+#nav-container {
+	background-color: salmon;
+	height: 2em;
+	margin: 1rem;
+	border: 2px solid black;
+	align-items: center;
+	/*justify-content: space-around;*/
+}
+
+#nav-container * {
+	vertical-align: middle;
+	margin: 0.5em 0;
+}
+
+a:nth-of-type(2) {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	padding: 0 1%;
+}
+
+a:nth-of-type(1) {
+	padding-left: 1em;
+}
+
+
+
+#box1 {
+	width: 25%;
+	background-color: lightblue;
+	height: 20rem;
+	border: 2px solid black;
+	padding: 1rem 0;
+	position: left;
+}
+
+#box1 * {
+	width: 80%;
+	height: 1.5rem;
+	margin: 15px 10% 0;
+}
+
+/*
+.songList {
+	width: 68%;
+	height: auto;
+	background-color: lightgreen;
+	border: 2px solid black;
+	padding: 1rem;
+	position: right;
+
+}*/
+
+#box2 {
+	width: 68%;
+	height: 20rem;
+	padding: 1rem;
+	background-color: lightgreen;
+	position: right;
+	border: 2px solid black;
+	overflow: auto;
+
+}
+
+.songs * {
+	margin: .25rem;
+	padding: 0 .25rem;
+	text-align: left;
+}
+
+.songs p {
+	display: inline-flex;
+	padding: .25rem;
+
+}
+
+#inputView {
+	width: 25%;
+}
+
+#inputView * {
+	margin-top: 1rem;
+}
+
+/********************
+Hidden Style
+********************/
+
+.hidden {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music History</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div id="nav-container">
+		<nav class="item">
+			<a href="#" id="viewMusic">View Music</a>
+			<a href="#" id="addMusic">Add Music</a>
+			<a href="#" id="homePage">Home</a>
+		</nav>
+	</div>
+	<div id="flex-container">
+		<div class="" id="box1">
+			<label>Song Length</label>
+			<input type="range" id="songLength" class="flex-item">
+
+			<label>Artist:</label>
+			<select class="dropdown flex-item">
+				<option value="artistA">ArtistA</option>
+				<option value="artistB">ArtistB</option>
+				<option value="artistC">ArtistC</option>
+				<option value="artistD">ArtistD</option>
+				<option value="artistE">ArtistE</option>
+			</select>
+
+			<label>Album:</label>
+			<select class="dropdown flex-item">
+				<option value="albumA1">A1</option>
+				<option value="albumA2">A2</option>
+				<option value="albumB1">B1</option>
+				<option value="albumB2">B2</option>
+				<option value="albumC1">C1</option>
+				<option value="albumC2">C2</option>
+				<option value="albumD1">D1</option>
+				<option value="albumD2">D2</option>
+				<option value="albumE1">E1</option>
+				<option value="albumE2">E2</option>
+			</select>
+		</div>
+		<div id="inputView" class="hidden">
+			<input type="text" class="input" id="inputSong" placeholder="Song"><br>
+			<input type="text" class="input" id="inputArtist" placeholder="Artist"><br>
+			<input type="text" class="input" id="inputAlbum" placeholder="Album"><br>
+			<input type="reset" id="addToLibrary" value="Add"></button>
+		</div>
+		<!-- <div class="songList">
+			<div id="box2" class="songList hidden">
+
+			</div>
+		</div> -->
+		<div id="box2" class="songList">
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src="ifee.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
