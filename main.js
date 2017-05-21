@@ -1,20 +1,21 @@
 "use strict";
+// retrieveSongs
 
 function callBack(json){
 	let array = json.songs;
+	console.log("callBack array", array);
 	let str = "";
 	array.forEach( (currVal, index) =>{
-		str = `<h3>${currVal.title}</h3>
+		str += `<h3>${currVal.title}</h3>
 				<p>${currVal.artist} | ${currVal.album} | </p>`;
-		writeFromJSON(str);
-		console.log("str", str);
 	});
+	console.log("str", str);
+	writeFromJSON(str);
 }
 /**************************
 Load JSON
 **************************/
-Loader.retrieveSongs(callBack);
-
+Loader.retrieveJSON(callBack);
 /**************************
 End
 **************************/
@@ -22,15 +23,28 @@ End
 /**************************
 Add New Music via UI
 **************************/
-function addNewMusic(songs){ //Tie songs back to main.js with a getter in ifee.js
-	let songArray = songs;
-	let song = document.getElementById("inputSong").value;
+// function addNewMusic(){ //Tie songs back to main.js with a getter in ifee.js
+// 	// let songArray = songs;
+// 	let song = document.getElementById("inputSong").value;
+// 	let artist = document.getElementById("inputArtist").value;
+// 	let album = document.getElementById("inputAlbum").value;
+// 	let str = song + " by " + artist + " on the album " + album;
+// 	// songArray.push(str);
+
+// 	writeFromPage(str);
+// 	clearTextInputs();
+// }
+
+function addNewMusic(){
+	let title = document.getElementById("inputSong").value;
 	let artist = document.getElementById("inputArtist").value;
 	let album = document.getElementById("inputAlbum").value;
-	let str = song + " by " + artist + " on the album " + album;
-	songArray.push(str);
+	let songObj = {"title": title, "artist": artist, "album": album};
+	console.log("songObj", songObj);
+	Loader.addToLibrary(songObj);
+	Loader.showSongs(callBack);
 
-	writeFromPage(str);
+	// writeFromPage(str);
 	clearTextInputs();
 }
 
@@ -68,7 +82,8 @@ function writeFromJSON(string){
 	var newDiv = `<div class="song">
 					${string}
 				 </div>`;
-	outputArea.innerHTML += newDiv;
+
+	outputArea.innerHTML = newDiv;
 }
 
 
@@ -108,8 +123,8 @@ addMusic.addEventListener("click", () => {
 	inputView.classList.remove("hidden");
 });
 
-let addToLibrary = document.getElementById("addToLibrary");
-addToLibrary.addEventListener("click", () => {
+let songToLibrary = document.getElementById("addToLibrary");
+songToLibrary.addEventListener("click", () => {
 	addNewMusic();
 	box2.classList.remove("hidden");
 });

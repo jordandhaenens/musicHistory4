@@ -2,19 +2,30 @@
 
 var Loader = (function(){
 
-	var songs = [];
+	var songJSON = [];
 
 	return {
 
-		retrieveSongs: function(callBack){
+		retrieveJSON: function(callBack){
 			let request = new XMLHttpRequest();
 			request.addEventListener("load", function(e){
-				songs = JSON.parse(this.responseText);
-				callBack(songs);
+				songJSON = JSON.parse(this.responseText);
+				callBack(songJSON);
+				console.log("songJSON", songJSON);
 			});
 			request.open("GET", "./songs.json");
 			request.send();
-			}
+		},
+
+		addToLibrary: function(newSongObj){
+			songJSON.songs.push(newSongObj);
+			console.log("addToLibrary", songJSON);
+		},
+
+		showSongs: function(callBack){
+			callBack(songJSON);
+			// return songJSON;
+		}
 
 	};
 
