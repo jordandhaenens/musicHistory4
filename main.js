@@ -2,16 +2,17 @@
 // retrieveSongs
 
 function callBack(json){
+	console.log("json", json);
+	let str = "";
 	for(var prop in json){
 		console.log("prop", prop); //for some reason this isn't looping through both keys
-		let array = json.item;
+		let array = json[prop];
 		// console.log("callBack array", array);
-		let str = "";
 		array.forEach( (currVal, index) =>{
 			str += `<h3>${currVal.title}</h3>
 					<p>${currVal.artist} | ${currVal.album} | </p>`;
 		});
-	}
+	};
 	console.log("str", str);
 	writeFromJSON(str);
 }
