@@ -1,0 +1,29 @@
+{
+	"songs": [
+		{
+			"title": "Let's Eat",
+			"artist": "Somebody",
+			"album": "Hungry"
+		},
+		{
+			"title": "Casual or Causal",
+			"artist": "Words Are Fun",
+			"album": "Chapter C"
+		},
+		{
+			"title": "A Walk in the Park",
+			"artist": "Flutter",
+			"album": "Story of My Day"
+		},
+		{
+			"title": "Rose",
+			"artist": "Bush",
+			"album": "In the Garden"
+		},
+		{
+			"title": "I want to Live",
+			"artist": "In Italy",
+			"album": "Maybe the Dolomites"
+		}
+	]
+}

@@ -3,6 +3,7 @@
 var Loader = (function(){
 
 	var songJSON = [];
+	var songJSON2 = [];
 
 	return {
 
@@ -10,8 +11,16 @@ var Loader = (function(){
 			let request = new XMLHttpRequest();
 			request.addEventListener("load", function(e){
 				songJSON = JSON.parse(this.responseText);
-				callBack(songJSON);
-				console.log("songJSON", songJSON);
+				let request2 = new XMLHttpRequest();
+				request2.addEventListener("load", function(e){
+					songJSON2 = JSON.parse(this.responseText);
+					songJSON.songs2 = songJSON2.songs;
+
+					console.log("songJSON", songJSON);
+					callBack(songJSON);
+				});
+				request2.open("GET", "./songs2.json");
+				request2.send();
 			});
 			request.open("GET", "./songs.json");
 			request.send();
