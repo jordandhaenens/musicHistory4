@@ -14,9 +14,12 @@ var Loader = (function(){
 				let request2 = new XMLHttpRequest();
 				request2.addEventListener("load", function(e){
 					songJSON2 = JSON.parse(this.responseText);
-					songJSON.songs2 = songJSON2.songs;
-
-					console.log("songJSON", songJSON);
+					let array = songJSON2.songs;
+					array.forEach(function(currVal){
+						// console.log("currVal", currVal);
+						songJSON.songs.push(currVal);
+					});
+					// console.log("songJSON", songJSON.songs);
 					callBack(songJSON);
 				});
 				request2.open("GET", "./songs2.json");
